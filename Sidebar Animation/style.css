@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+
+.menu-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20pt;
+}
+
+.sidebar {
+    overflow: hidden;
+    width: 75px;
+    border-right: 1px solid rgb(144, 144, 144);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: stretch;
+    transition: width 200ms ease-in-out;
+    position: sticky;
+    left: 0;
+    z-index: 0;
+}
+
+.sidebar .hidden-sidebar {
+    opacity: 0;
+    width: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.sidebar.open .hidden-sidebar {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+.sidebar .top-sidebar {
+    padding-bottom: 20px;
+}
+
+
+.middle-sidebar {
+    width: 100%;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+ul .hidden-sidebar {
+    margin-left: 1.5rem;
+    white-space: nowrap;
+}
+
+.sidebar-link {
+    display: flex;
+    width: 100%;
+    padding: .5rem 0;
+    color: rgb(144, 144, 144);
+    text-decoration: none;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.sidebar-list-item {
+    position: relative;
+    width: 100%;
+    fill: rgb(144, 144, 144);
+}
+
+.sidebar-list-item.active {
+    fill: rgb(204, 0, 0);
+    background-color: rgb(244, 244, 244);
+}
+
+.sidebar-list-item:hover {
+    background-color: rgb(244, 244, 244);
+}
+
+.sidebar-list-item.active::before {
+    content: "";
+    background-color: rgb(204, 0, 0);
+    height: 100%;
+    left: 0;
+    width: 3px;
+    position: absolute;
+}
+
+.sidebar.open {
+    width: 200px;
+}
+
+i {
+    color: blue;
+    overflow: hidden;
+    font-size: 20pt;
+}
